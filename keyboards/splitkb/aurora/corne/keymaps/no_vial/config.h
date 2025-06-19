@@ -3,18 +3,9 @@
 
 #pragma once
 
-#define VIAL_KEYBOARD_UID {0x89, 0x87, 0xB7, 0x0F, 0x54, 0x23, 0xC2, 0xE8}
-
-#define VIAL_UNLOCK_COMBO_ROWS { 0, 4 }
-#define VIAL_UNLOCK_COMBO_COLS { 5, 5 }
-
-#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#define RGB_MATRIX_KEYPRESSES
-
-#define VIAL_TAP_DANCE_ENTRIES 64
-#define VIAL_COMBO_ENTRIES 64
-#define DYNAMIC_KEYMAP_LAYER_COUNT 10
-#define DYNAMIC_KEYMAP_MACRO_COUNT 128
+//#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_MODS_ENABLE
+#define SPLIT_LAYER_STATE_ENABLE
 
 // The default is 50. This makes the mouse ~3 times faster and more accurate
 #define MOUSEKEY_INTERVAL 16
@@ -29,3 +20,5 @@
 #define MOUSEKEY_WHEEL_INTERVAL 50
 // The default is 40
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 100
+
+#define CAPS_WORD_IDLE_TIMEOUT 3000  // 3 seconds.

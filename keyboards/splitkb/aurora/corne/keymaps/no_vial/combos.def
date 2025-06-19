@@ -1,0 +1,25 @@
+
+// Combo to enable switching permanently to the numpad layer from the default layer
+COMB(cNumlayerIn, TG(5), KC_U, KC_I, KC_O)
+
+// Combo to enable returning to the default layer from the numpad layer using the same keys
+COMB(cNumlayerOut, TG(5), KC_7, KC_8, KC_9)
+
+// J + K + L = ENTER
+COMB(cEnter, KC_ENTER, KC_J, TD(TD_QUOTE),TD(TD_DQUOTE))
+
+// D + F = _ (Underscore)
+COMB(cUnderscore, KC_UNDS, LT(4,KC_D), KC_F)
+
+// D + G = # (Hash)
+COMB(cHashSymb, KC_HASH, LT(4,KC_D), TD(TD_FTAB))
+
+// Q + M + K = Compile QMK
+SUBS(cCompile, "qmk compile -kb splitkb/aurora/corne/rev1 -km no_vial", KC_Q, KC_M, TD(TD_QUOTE))
+
+// P + W + D = PASSWORD
+SUBS(cLetMeIn, "!SaoirseSkyeQ2", KC_P, KC_W, LT(4,KC_D))
+
+// D + K = Capsword Toggle
+COMB(cCapsword, CK_CAPSWORD, LT(4,KC_D), TD(TD_QUOTE))
+
