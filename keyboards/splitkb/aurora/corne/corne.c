@@ -18,12 +18,16 @@
 
 // The layers get a name for readability, which is then used in the OLED below.
 enum layers {
-  DEF,
-  MOUSE,
-  NAV,
+  HOME,
   SYMB,
-  MACRO,
-  NUM
+  NUMS,
+  MOUSE,
+  MAC_1,
+  MAC_2,
+  SEVEN,
+  EIGHT,
+  NINE,
+  TEN,
 };
 
 #ifdef OLED_ENABLE
@@ -204,8 +208,8 @@ static void render_kb_LED_state(void) {
 static void render_layer_state(void) {
 
     switch (get_highest_layer(layer_state | default_layer_state)) {
-        case DEF:		
-			oled_write_P(PSTR(" DEF "), false);	
+        case HOME:		
+			oled_write_P(PSTR("HOME "), false);	
 			oled_write_P(PSTR("     "), false);
 			if (is_keyboard_master()){
 				oled_write_P(PSTR("     "), false);
@@ -220,7 +224,7 @@ static void render_layer_state(void) {
             break;
 			
         case MOUSE:
-			oled_write_P(PSTR("MOUSE"), false);
+			oled_write_P(PSTR("SYMB "), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
@@ -235,8 +239,8 @@ static void render_layer_state(void) {
 			}
             break;
 			
-        case NAV:
-			oled_write_P(PSTR(" NAV "), false);
+        case MAC_1:
+			oled_write_P(PSTR("MAC_1 "), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
@@ -251,24 +255,8 @@ static void render_layer_state(void) {
 			}
             break;
 			
-		case SYMB:
-			oled_write_P(PSTR(" SYM "), false);
-			oled_write_P(PSTR("     "), false);
-			
-			if (is_keyboard_master()){
-				oled_write_P(PSTR(")}]>>"), false);
-				oled_write_P(PSTR("!lur!"), false);
-				oled_write_P(PSTR("@ d/\\"), false);
-			}
-			else {			
-				oled_write_P(PSTR("|<[{("), false);
-				oled_write_P(PSTR("  _#?"), false);
-				oled_write_P(PSTR("*$^~&"), false);
-			}
-            break;
-			
-        case MACRO:
-			oled_write_P(PSTR("MACRO"), false);
+		case MAC_2:
+			oled_write_P(PSTR("MAC_2"), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
@@ -283,8 +271,26 @@ static void render_layer_state(void) {
 			}
             break;	
 			
-		case NUM:
-			oled_write_P(PSTR(" NUM "), false);
+		case SYMB:
+			oled_write_P(PSTR("SYMB"), false);
+			oled_write_P(PSTR("     "), false);
+			
+			if (is_keyboard_master()){
+				oled_write_P(PSTR(")}]>>"), false);
+				oled_write_P(PSTR("!lur!"), false);
+				oled_write_P(PSTR("@ d/\\"), false);
+			}
+			else {			
+				oled_write_P(PSTR("|<[{("), false);
+				oled_write_P(PSTR("  _#?"), false);
+				oled_write_P(PSTR("*$^~&"), false);
+			}
+            break;
+			
+        
+			
+		case NUMS:
+			oled_write_P(PSTR("NUMS "), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
@@ -297,10 +303,75 @@ static void render_layer_state(void) {
 				oled_write_P(PSTR("     "), false);
 				oled_write_P(PSTR("     "), false);
 			}
-            break;		
+            break;	
+
+		case SEVEN:
+			oled_write_P(PSTR("SEVEN"), false);
+			oled_write_P(PSTR("     "), false);
 			
-    //    default:
-     //       oled_write_P(PSTR("OTHER"), false);			
+			if (is_keyboard_master()){
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+			else {
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+            break;					
+	
+
+		case EIGHT:
+			oled_write_P(PSTR("EIGHT"), false);
+			oled_write_P(PSTR("     "), false);
+			
+			if (is_keyboard_master()){
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+			else {
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+            break;				
+	
+		case NINE:
+			oled_write_P(PSTR("NINE "), false);
+			oled_write_P(PSTR("     "), false);
+			
+			if (is_keyboard_master()){
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+			else {
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+            break;			
+	
+		case TEN:
+			oled_write_P(PSTR("TEN  "), false);
+			oled_write_P(PSTR("     "), false);
+			
+			if (is_keyboard_master()){
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+			else {
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+				oled_write_P(PSTR("     "), false);
+			}
+            break;			
+	
+        default:
+            oled_write_P(PSTR("OTHER"), false);			
     }
 }
 
