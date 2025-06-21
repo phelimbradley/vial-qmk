@@ -21,4 +21,4 @@
 #   define OLED_FONT_H "keyboards/splitkb/aurora/corne/glcdfont.c"
 #endif
 
-#define DYNAMIC_KEYMAP_MACRO_EEPROM_SIZE 8192
+#define DYNAMIC_KEYMAP_MACRO_EEPROM_SIZE 16384

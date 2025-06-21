@@ -1,3 +1,5 @@
+VPATH += keyboards/gboards/
+
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 

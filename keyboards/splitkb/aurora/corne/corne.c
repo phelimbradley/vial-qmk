@@ -224,7 +224,7 @@ static void render_layer_state(void) {
             break;
 			
         case MOUSE:
-			oled_write_P(PSTR("SYMB "), false);
+			oled_write_P(PSTR("MOUSE"), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
@@ -272,7 +272,7 @@ static void render_layer_state(void) {
             break;	
 			
 		case SYMB:
-			oled_write_P(PSTR("SYMB"), false);
+			oled_write_P(PSTR("SYMB "), false);
 			oled_write_P(PSTR("     "), false);
 			
 			if (is_keyboard_master()){
