@@ -293,9 +293,9 @@ static void render_layer_state(void) {
 			oled_write_P(PSTR("NUMS "), false);
 			oled_write_P(PSTR("     "), false);
 			
-			if (is_keyboard_master()){
-				oled_write_P(PSTR(" 7890"), false);
-				oled_write_P(PSTR("+456,"), false);
+			if (is_keyboard_master()==false){
+				oled_write_P(PSTR("*789,"), false);
+				oled_write_P(PSTR("+4560"), false);
 				oled_write_P(PSTR("-123."), false);
 			}
 			else {
@@ -375,27 +375,35 @@ static void render_layer_state(void) {
     }
 }
 
-
 bool oled_task_kb(void) {
-    if (!oled_task_user()) {
-        return false;
-    }
-  //  if (is_keyboard_master()) {
-        // Renders the current keyboard state (layers and mods)
-        //render_logo();
-        render_logo_text();
-        render_space();
-        render_layer_state();
-        render_space();
-        render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
-        render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
-        //render_kb_LED_state();
- //   } else {
-       
-   // }
-     
-    return false;
+	if (!oled_task_user()) {
+		return false;
+	}
+	//  if (is_keyboard_master()) {
+	// Renders the current keyboard state (layers and mods)
+	//render_logo();
+	render_logo_text();
+	render_space();
+	render_layer_state();
+	render_space();
+	render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
+	render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
+		render_space();
+	if (is_caps_word_on()){
+		oled_write_P(PSTR("CWORD"),false);
+	}
+	else {
+		render_space();
+	}
+	if (host_keyboard_led_state().caps_lock){
+oled_write_P(PSTR("CAPSL"),false);
+	}
+	else {
+		render_space();
+	}
+	return false;
 }
+
 #endif
 
 #ifdef ENCODER_ENABLE

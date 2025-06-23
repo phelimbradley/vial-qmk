@@ -65,7 +65,7 @@ void caps_word_off(void) {
     if (!caps_word_active) {
         return;
     }
-
+	unregister_mods(MOD_BIT(KC_LSFT));		// Added by Phelim
     unregister_weak_mods(MOD_MASK_SHIFT); // Make sure weak shift is off.
     caps_word_active = false;
     caps_word_set_user(false);
