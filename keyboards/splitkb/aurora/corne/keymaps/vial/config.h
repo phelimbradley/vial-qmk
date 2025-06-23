@@ -13,6 +13,8 @@
 #define DYNAMIC_KEYMAP_LAYER_COUNT 10
 #define DYNAMIC_KEYMAP_MACRO_COUNT 128
 
+#define CAPS_WORD_IDLE_TIMEOUT 3000  // 3 seconds.
+
 // The default is 50. This makes the mouse ~3 times faster and more accurate
 #define MOUSEKEY_INTERVAL 16
 // The default is 20. Since we made the mouse about 3 times faster with the previous setting,
